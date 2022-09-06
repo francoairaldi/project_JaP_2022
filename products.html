@@ -30,7 +30,7 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="userNav"> <!-- Boton de usuario en el navbar -->
           </li>
         </ul>
       </div>
@@ -41,12 +41,33 @@
         <h2>Productos</h2>
     </div>
     <div class="text-center p-5" style="margin-top: -70px"> <!-- buscar una clase de bootstrap para no hacer esta chanchada-->
-      <p>Verás aquí todos los productos de la categoría Autos</p> <!-- ver despues como mostrar el nombre de la categoria dinamicamente-->
+      <p id="secDesc"></p> <!-- aca el js va a poner la descripcion de la seccion -->
     </div>
+
     <div class="container">
+      <div class="d-flex justify-content-end" id="sortPanel" style="padding-bottom: 5px"> <!-- panel de ordenado -->
+        <button class="btn btn-light" id="priceDown"><img src="img/sort-down.svg">$</button>
+        <button class="btn btn-light" id="priceUp"><img src="img/sort-up.svg">$</button>
+        <button class="btn btn-light" id="relDown"><img src="img/sort-down.svg">Relevancia</button>
+      </div>
+    </div>
+
+    <div class="container"> <!-- container de filtrado -->
+      <div class="d-flex justify-content-end" id="filterPanel" style="padding-bottom: 5px"> <!-- panel de filtrado -->
+        <form id="filterForm"> <!-- formulario de filtrado -->
+          <label class="font-weight-normal text-end my-2" for="priceMin">Precio:</label>
+          <input id="priceMin" type="number" placeholder="min." min="0">
+          <input id="priceMax" type="number" placeholder="máx." min="0">
+          <button class="btn btn-light btn-block" id="filterBtn">Filtrar</button> <!-- boton Filtrar -->
+          <button class="btn btn-light btn-block" id="clrBtn">Limpiar</button> <!--boton Limpiar-->
+        </form>
+      </div>
+    </div>
+
+    <div class="container"> <!-- container de la lista -->
         <div class="row">
             <div class="list-group" id="product-list-container"> <!--aca adentro va la lista de productos-->
-
+              
             </div>
         </div>
     </div>

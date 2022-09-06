@@ -39,3 +39,10 @@ let getJSONData = function(url){
         return result;
     });
 }
+
+//Usuario en el navbar
+document.addEventListener("DOMContentLoaded", function(){
+  let user = localStorage.getItem('storedUserName');
+  let userNav = document.getElementById("userNav");
+  userNav.innerHTML = `<a class="nav-link" href="my-profile.html">${user}</a>`;
+})

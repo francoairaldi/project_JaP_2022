@@ -26,8 +26,9 @@ document.addEventListener("DOMContentLoaded", function(event){
             inputPass.classList.remove("is-invalid");
             inputPass.classList.add("is-valid")
         }
-        //redireccion a home si email y password son validos
+        //redireccion a home si email y password son validos + guardado de email en localStorage
         if ((inputEmail.classList.contains("is-valid"))&&(inputPass.classList.contains("is-valid"))){
+            localStorage.setItem('storedUserName', inputEmail.value);
             window.location.href="home.html"
         }
     })
