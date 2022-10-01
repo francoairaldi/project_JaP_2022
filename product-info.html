@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -38,9 +39,65 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div>
+        <h4 id="title"><!-- Nombre del producto--></h4>
       </div>
+      <div>
+        <hr> <!-- Barra separadora -->
+      </div>
+      <div class="row">
+        <h5>Precio</h5>
+        <p id="price"><!-- Divisa + costo --></p>
+      </div>
+      <div class="row">
+        <h5>Descripción</h5>
+        <p id="description"><!-- Descripcion del producto --></p>
+      </div>
+      <div class="row">
+        <h5>Categoría</h5>
+        <p id="category"><!-- Categoria del producto --></p>
+      </div>
+      <div class="row">
+        <h5>Cantidad de vendidos</h5>
+        <p id="sold"><!-- Cantidad de productos vendidos --></p>
+      </div>
+      <div class="row">
+        <h5>Imágenes ilustrativas</h5>
+        <div class="row" id="img">
+          <!-- Imagenes -->
+        </div>
+      </div>
+
+      <div>
+        <h4>Comentarios</h4>
+        <div class="list-group" id="comments">
+          <!-- Caja de comentarios -->
+        </div>
+      </div>
+      <div class="row"> <!-- Enviar comentario -->>
+        <h4>Comentar</h4>
+      </div>
+      <form>
+        <div>
+          <label class="form-label" for="comment">Tu opinión:</label>
+          <textarea class="form-control" id="comment"></textarea>
+        </div>
+        <div>
+          <label for="score-select">Tu puntuación:</label>
+          <br>
+          <select name="score" id="score-select">
+            <option value="">--Elige tu puntuación--</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+        <div class="mt-2 pt-1">
+          <button type="button" class="btn btn-primary btn-sm">Enviar</button>
+        </div>
+      </form>
     </div>
   </main>
   <footer class="text-muted">

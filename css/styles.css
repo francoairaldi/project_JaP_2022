@@ -188,3 +188,11 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.product-list-link {
+  text-decoration:unset;
+  color:inherit
+}
+.product-list-link:hover {
+  color:inherit;
+}

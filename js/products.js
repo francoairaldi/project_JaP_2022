@@ -26,13 +26,17 @@ function showProducts(array){
             <div class="list-group-item list-group-item-action">
                 <div class="row">
                     <div class="col-3">
-                        <img src="` + product.image + `" alt="product image" class="img-thumbnail">
+                        <a href="product-info.html" id="img-link-${product.id}">
+                            <img src="` + product.image + `" alt="product image" class="img-thumbnail">
+                        </a>
                     </div>
                     <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <div class="mb-1">
-                            <h4>`+ product.name +` - ` + product.currency +` `+ product.cost +`</h4>
-                            <p> `+ product.description +`</p>
+                                <a class="product-list-link" href="product-info.html" id="product-link-${product.id}">
+                                    <h4>`+ product.name +` - ` + product.currency +` `+ product.cost +`</h4>
+                                </a>
+                                <p> `+ product.description +`</p>
                             </div>
                             <small class="text-muted">` + product.soldCount + ` vendidos</small>
                         </div>
@@ -44,6 +48,24 @@ function showProducts(array){
         }
     }
 }
+
+//desplegar los eventos
+function deployEvents(array){
+    for(i = 0; i<array.length; i++){
+        let product = array[i];
+        document.getElementById(`product-link-${product.id}`).addEventListener("click", function(event){
+            event.preventDefault();
+            localStorage.setItem("storedProductID", product.id);
+            window.location.href="product-info.html"
+        })
+        document.getElementById(`img-link-${product.id}`).addEventListener("click", function(event){
+            event.preventDefault();
+            localStorage.setItem("storedProductID", product.id);
+            window.location.href="product-info.html"
+        })
+    }
+}
+
 
 //ordenado del arreglo de productos
 
@@ -125,6 +147,7 @@ document.addEventListener("DOMContentLoaded", function(event){ //esperando a que
             sortListRelDown(productsArray); //ordenar el array por relevancia por defecto
             productsArrayFiltered = productsArray; //copiar el array original en ArrayFIltered
             showProducts(productsArrayFiltered); //invocar showProducts definida mas arriba con productsArrayFiltered para que me genere la lista en el HTML
+            deployEvents(productsArrayFiltered)
         }
     });
 
@@ -132,21 +155,24 @@ document.addEventListener("DOMContentLoaded", function(event){ //esperando a que
     priceDown.addEventListener("click", function(event){ //click en priceDown
         sortListPriceDown(productsArray);
         sortListPriceDown(productsArrayFiltered);
-        showProducts(productsArrayFiltered)
+        showProducts(productsArrayFiltered);
+        deployEvents(productsArrayFiltered)
     })
 
     let priceUp = document.getElementById("priceUp");
     priceUp.addEventListener("click", function(event){ //click en priceUp
         sortListPriceUp(productsArray);
         sortListPriceUp(productsArrayFiltered);
-        showProducts(productsArrayFiltered)
+        showProducts(productsArrayFiltered);
+        deployEvents(productsArrayFiltered)
     })
 
     let RelDown = document.getElementById("relDown");
     RelDown.addEventListener("click", function(event){ //click en RelDown
         sortListRelDown(productsArray);
         sortListRelDown(productsArrayFiltered);
-        showProducts(productsArrayFiltered)
+        showProducts(productsArrayFiltered);
+        deployEvents(productsArrayFiltered)
     })
 
     let form = document.getElementById("filterForm");
@@ -158,11 +184,15 @@ document.addEventListener("DOMContentLoaded", function(event){ //esperando a que
     let filter = document.getElementById("filterBtn");
     filter.addEventListener("click", function(event){ //click en filtrar
         productsArrayFiltered = filterList();
-        showProducts(productsArrayFiltered)
+        showProducts(productsArrayFiltered);
+        deployEvents(productsArrayFiltered)
     })
     let clear = document.getElementById("clrBtn");
     clear.addEventListener("click", function(event){//click en limpiar
         clearFilter(); //limpiar los filtros
-        showProducts(productsArray) //mostrar el arreglo sin filtrar
+        showProducts(productsArray); //mostrar el arreglo sin filtrar
+        deployEvents(productsArray)
     })
+
+
 }); 
