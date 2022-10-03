@@ -5,6 +5,13 @@
   font-family: 'Raleway', serif !important;
 }
 
+.card{
+  background-color:#0d6efd !important
+}
+.card:hover{
+  background-color:#0a58ca !important
+}
+
 .jumbotron .display-4 {
   font-weight: bold;
 }

@@ -1,4 +1,3 @@
-console.log(localStorage.getItem("storedProductID"));
 const product = PRODUCT_INFO_URL + localStorage.getItem("storedProductID") + ".json";
 const productComments = PRODUCT_INFO_COMMENTS_URL + localStorage.getItem("storedProductID") + ".json";
 
@@ -19,6 +18,32 @@ function showInfo(object){
         `;
         document.getElementById("img").innerHTML = htmlContentToAppend
     }
+}
+
+//mostrar productos relacionados
+function showRelated(object){
+    let htmlContentToAppend = "";
+    for (let i = 0; i<object.data.relatedProducts.length; i++){
+        let relProduct = object.data.relatedProducts[i];
+        htmlContentToAppend += `
+        <div class="col-sm-6">
+            <a href="product-info.html" onclick="relatedRedirect(${relProduct.id})" style="text-decoration: none; color:white">
+                <div class="card">
+                    <img src="${relProduct.image}" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title, text-center">${relProduct.name}</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        `;
+        document.getElementById("related").innerHTML = htmlContentToAppend
+    }
+}
+
+//redireccion al producto relacionado
+function relatedRedirect(id){
+    localStorage.setItem("storedProductID", id);
 }
 
 //mostrar estrellas
@@ -64,13 +89,13 @@ document.addEventListener("DOMContentLoaded", function(event){
 
     getJSONData(product).then(function(resultObj){
         if (resultObj.status === "ok"){
-            console.log(resultObj.data)
-            showInfo(resultObj)
+            showInfo(resultObj);
+            showRelated(resultObj)
         }
     })
+
     getJSONData(productComments).then(function(resultObj){
         if (resultObj.status === "ok"){
-            console.log(resultObj.data)
             showComments(resultObj)
         }   
     })
