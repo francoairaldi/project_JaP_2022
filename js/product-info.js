@@ -28,10 +28,10 @@ function showRelated(object){
         htmlContentToAppend += `
         <div class="col-sm-6">
             <a href="product-info.html" onclick="relatedRedirect(${relProduct.id})" style="text-decoration: none; color:white">
-                <div class="card">
-                    <img src="${relProduct.image}" class="card-img-top">
+                <div class="card mb-4 shadow-sm custom-card cursor-active">
+                    <img src="${relProduct.image}" class="bd-placeholder-img card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title, text-center">${relProduct.name}</h5>
+                        <h4 class="card-title, m-3" style="color:black">${relProduct.name}</h4>
                     </div>
                 </div>
             </a>

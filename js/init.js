@@ -40,9 +40,21 @@ let getJSONData = function(url){
     });
 }
 
-//Usuario en el navbar
+//Usuario con dropdown en el navbar
 document.addEventListener("DOMContentLoaded", function(){
   let user = localStorage.getItem('storedUserName');
-  let userNav = document.getElementById("userNav");
-  userNav.innerHTML = `<a class="nav-link" href="my-profile.html">${user}</a>`;
+  
+  //injectar el codigo del dropdown
+  document.getElementById("userNav").innerHTML = `
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">${user}</a>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+    <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+    <li><a class="dropdown-item" href="index.html" id="logout">Cerrar sesión</a></li>
+  `;
+
+  //evento logout
+  document.getElementById("logout").addEventListener("click", function(){
+    localStorage.removeItem("storedUserName")
+  })
 })
