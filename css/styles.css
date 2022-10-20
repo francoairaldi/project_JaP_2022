@@ -205,3 +205,50 @@ a.custom-card:hover {
     border-color: #212529;
     color:#FFFFFFc8
 }
+
+.cart-table{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.cart-table td:nth-child(5){
+  font-weight: bold;
+}
+
+.cart-table td{
+  width:auto;
+}
+
+.tableImg{
+  width: 10% !important;
+}
+
+.cart-img{
+  max-width: 100%;
+}
+
+.cartInput{
+  width: 1% !important;
+}
+
+#inputCount{
+  width:100%
+}
+
+.tablefixer{
+  width: 30% !important;
+}
+
+.shipmentForm {
+  display:inline-block;
+}
+
+.shipmentForm input{
+  display:block;
+  width: 100%;
+}
+
+.sectionTitle{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

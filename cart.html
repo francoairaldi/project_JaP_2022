@@ -36,10 +36,59 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container" >
+      <div>
+        <h2 class="sectionTitle text-center">Carrito de compras</h2>        
       </div>
+      <div>
+        <h4 class="sectionTitle">Artículos a comprar</h4>
+      </div>
+
+      <div id="cartBody">
+        <!-- Aqui sucede la magia -->
+      </div>
+
+      <hr>
+
+      <div class="sectionTitle" id="shipment"> <!-- Opciones de envio -->
+        <h4>Tipo de envío</h4>
+      </div>
+
+      <div>
+        <input type="radio" id="premium" name="delivery" checked value="premium">
+        <label for="premium">Premium 2 a 5 días (15%)</label>
+      </div>
+      <div>
+        <input type="radio" id="express" name="delivery" value="express">
+        <label for="express">Express 5 a 8 días (7%)</label>
+      </div>
+      <div>
+        <input type="radio" id="standard" name="delivery" value="standard">
+        <label for="standard">Standard 12 a 15 días (5%)</label>
+      </div>      
+
+      <div class="sectionTitle"> <!-- Datos del envio -->
+        <h4>Dirección de envío</h4>
+      </div>
+
+      <div class="row">
+        <div class="col-5 shipmentForm">
+          <label for="calle">Calle</label>
+          <input type="text" id="calle" name="calle">
+        </div>
+        <div class="col-3 shipmentForm">
+          <label for="numero">Número</label>
+          <input type="text" id="numero" name="numero">
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-5 shipmentForm">
+          <label for="esquina">Esquina</label>
+          <input type="text" id="esquina" name="esquina">
+        </div>
+      </div>
+
     </div>
   </main>
   <footer class="text-muted">
