@@ -25,7 +25,7 @@ function showCart(array){
                     <td class="tableImg"><img class="cart-img" src="${product.image}"></td>
                     <td>${product.name}</td>
                     <td>${product.currency} ${product.unitCost}</td>
-                    <td class="cartInput"><input type="number" id="inputCount${product.id}" name="count" value="${product.count}" min="0"></td>
+                    <td class="cartInput"><input type="number" id="inputCount${product.id}" name="count" value="${product.count}" min="1"></td>
                     <td id="subtotal${product.id}">${product.currency} ${product.unitCost*product.count}</td>
                     <td class="tablefixer"></td>
                 </tr>`
