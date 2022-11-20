@@ -52,10 +52,65 @@
   </nav>
   <main>
     <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+      <div class="row">
+        <div class="col-2">
+
+        </div>
+
+        <div class="col-8">
+          <div class="row">
+            <h2>Perfil</h2>
+          </div>
+    
+          <hr>
+    
+          <div> <!-- Formulario -->
+            <form id="profile-form">
+    
+              <div class="profile-div"> <!-- Columna izquierda -->
+                <div class="profile-div2">
+                  <label for="name1" class="profile-label">Primer nombre*</label>
+                  <input type="text" class="form-control profile-input" id="name1">
+                  <label for="surname1" class="profile-label">Primer apellido*</label>
+                  <input type="text" class="form-control profile-input" id="surname1">
+                  <label for="email" class="profile-label">E-mail*</label>
+                  <input type="text" class="form-control profile-input" id="email">
+                </div>
+    
+                <div class="profile-div2"> <!-- Columna derecha -->
+                  <label for="name2" class="profile-label">Segundo nombre</label>
+                  <input type="text" class="form-control profile-input" id="name2">
+                  <label for="surname2" class="profile-label">Segundo apellido</label>
+                  <input type="text" class="form-control profile-input" id="surname2">
+                  <label for="phone" class="profile-label">Teléfono de contact*</label>
+                  <input type="text" class="form-control profile-input" id="phone">
+                </div>
+              </div>
+
+              <div> <!-- Alerts -->
+                <div class="alert alert-success" role="alert" id="successAlert" hidden> <!-- Alert exito -->
+                  Datos guardados con éxito
+                </div>
+                <div class="alert alert-danger" role="alert" id="errorAlert" hidden> <!-- Alert error -->
+                  Llene los campos requeridos con datos válidos 
+                </div>
+              </div>
+
+              <hr>
+              
+              <button type="submit" class="btn btn-primary">Guardar cambios</button> <!-- Submit -->
+    
+            </form>
+          </div>
+    
+        </div>
+        </div>
+
+        <div class="col-2">
+          
+        </div>
       </div>
-    </div>
+
   </main>
   <footer class="text-muted">
     <div class="container">

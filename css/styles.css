@@ -252,3 +252,33 @@ a.custom-card:hover {
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+.profile-div{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.profile-div2{
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.profile-input{
+  display: flex;
+  width: 100%;
+}
+
+.profile-label{
+  margin-top: 15px;
+}
+
+#successAlert, #errorAlert{
+  position: inherit;
+  transform: none;
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1rem;
+}
